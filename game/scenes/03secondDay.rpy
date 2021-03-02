@@ -400,17 +400,19 @@ label waifuTomas:
   t "Me salió ayer y creo que te podría gustar..."
   "Oh... Eso sí me interesa"
   tu "¿Quién te salió?"
-  t "Sadao Maou"
-  "Sepa quién sea"
+  t "Gragas"
+  "Wait, ¿de LoL?"
   tu "Oh, ¿okey?"
   t "Ten..."
-  t "{i}$give @[povname] Sadao Maou{/i}"
+  t "{i}$give @[povname] Gragas{/i}"
+  # Agregar Gragas a Harem
   tu "Oh, gracias. Creo..."
   tu "Regresaré con los demás"
   jump ccChoser
 
 
 label waifuNaki:
+  $ friendNaki += 2
   tu "Hola otra vez, Naki"
   n "Oh, hola"
   n  "¿Qué pasó?"
@@ -429,15 +431,157 @@ label waifuNaki:
   "Naki no parece gustarle mucho esto..."
   tu "Es [waifu_name]"
   
-  if waifu[1] != 2:
+  if waifu[1] == 2:
     n "Oh, nice"
     tu "Emmm, es de tu Wishlist"
     tu "¿La quieres?"
     n "Emmm, me da igual. Pero... si quieres"
-    tu ""
+    tu "Sisi, te la quiero dar"
+    n "Pues..."
+    n "Supongo que está bien..."
+    n "¿Sabes cómo dar Waifus?"
+    tu "Oh... Nop"
+    n "Usa el comando"
+    n "$give @naki [waifu_name]"
+    
+    $ attempts = 0
+    $ command = ''
+    while command != "$give @naki {}".format(waifu_name):
+        if command != '':
+          $ attempts += 1
+          if "pabel" or "pavo" in command:
+            if attempts >= 3:
+              n "Adios..."
+              "{b}{i}Naki se ha desconectado{/i}{/b}"
+              # hide
+              "{b}{i}Naki se ha conectado{/i}{/b}"
+              n "Hola"
+              tu "P...Perdon"
+            else:
+              n "Para qué el pavolol. Ni sabe quién es ella" 
+              tu "P...Perdon"
+          else:
+            if attempts >= 3:
+              "{b}¿Eres idiota?{/b}"
+            else:
+              "No... así no era"
+        $ command = renpy.input("$give @naki [waifu_name]")  
+
+    n "Yoooo, gracias"
+    tu "De nada, bro:)"
+    "Todo está yendo de acuerdo al plan"
+    "Si sigo así, podré hacer feliz a mi papá"
+    tu "Bueno, ya me voy"
+
   else:
+    $ friendNaki += 1
+    n "Y..."
+    n "Jamás habia escuchado de ella en mi vida"
+    n "¿Para qué voy a querer eso?"
+    tu "Oh... Perdón, creí que te iba a gustar..."
+    n "Nah, pa qué"
+    n "Si quieres te la puedes quedar tú"
+    n "Oh, ya mejor le puedes hacer divorce de una"
+    n "Ahorraría tiempo a los dos"
+    tu "¿Qué pasa si le hago divorce?"
+    n "Te da kakera, hazlo"
+    tu "O...Ok"
+
+    $ command = ''
+    while command != "$divorce {}".format(waifu_name):
+      if command != '':
+        "No... así no era"
+      $ command = renpy.input("$divorce [waifu_name]")    
+
+    "{b}{i} Se ha añadido 383 kakera a tu cuenta {/b}{/i}"
+    n "Más fácil"
+    n "No te tomó nada de tiempo"
+    tu "Si..."
+    tu "Bueno, perdón, ya me voy"
+    "Creo que perdí puntos..."
+    "A este ritmo no voy a conseguir nada"
+
+  n "No, espera"
+  n "Clamie algo que posiblemente te pueda gustar..."
+  tu "Oh"
+  tu "¿Para mí?"
+  n "Si..."
+  n "{i}$give @[povname] Gragas{/i}"
+  n "Es del LoL, alguien me dijo que te gustaba mucho..."
+  tu "Oh, ¡Wow!"
+  tu "Muchas gracias"
+  tu "Sí me gusta mucho LoL..."
+  tu "Bueno, adios"
 
 
+
+#Turytytyty
+label waifuPabel:
+  tu "Hola otra vez, Pabel"
+  p "Hola, Mau, ¿cómo has estado? ¿Te están cayedo bien los demás?"
+  tu "Emmmm.... Sí. No sé cómo les esté cayendo yo a ellos..."
+  p "No te preocupes, conforme pase el tiempo les irás cayendo mejor"
+  p "Recuerda, este apenas es tu segundo día"
+  tu "Sisi, claro"
+  p "Bueno, ¿qué pasó?"
+  tu "Oh, cierto cierto"
+  tu "Pues te quería regalar una Waifu que me salió"
+  p "Oh, ya veo"
+  p "¿Quién es?"
+  tu "Es [waifu_name]"
+
+  if waifu[1] == 1:
+    $ friendPabel += 2
+    p "Nahhhh, no te creo"
+    p "Ala, es de mis favoritas"
+    p "¿Cómo supiste?"
+    tu "Jeje, ¿sí es una de las que querías?"
+    p "Síiiiii"
+    p "Estaba en mi Wishlist"
+    p "¿Seguro que sí me la quieres dar?"
+    tu "Sisi, claro, no te preocupes por eso"
+    tu "¿Cómo te la puedo dar?"
+    p "Oh, con este comando"
+    p "$give @pavo [waifu_name]"
+    "Ya veo..."
+
+    $ command = ''
+    while command != "$give @pavo {}".format(waifu_name):
+      if command != '':
+          if attempts >= 3:
+            "{b}¿Eres idiota?{/b}"
+          else:
+            "No... así no era"
+        $ command = renpy.input("$give @pavo [waifu_name]")  
+
+    p "Siuuuu, muchas gracias [povname]"
+    tu "Jaja, no hay de qué"
+    "Genial, esto está funcioando mejor de lo que pensaba"
+    "Probablemente pueda hacer muy buena amistad con Pabel"
+  
+  else:
+    $ friendPabel += 1
+    p "Mmmmmm, pues..."
+    p "Sí me sé todo el plot del ánime..."
+    p "Incluso me sé el final"
+    p "Pero la verdad, verdad"
+    p "No sé quién sea realmente"
+    p "Pero si tiene algún valor no veo el por qué no aceptarla"
+    p "¿Seguro que me la quieres dar?"
+    tu "Sí, la verdad yo tampoco sé quién es, pero igual te la quería regalar"
+    p "Pues creo que está bien. A lo mejor la puedo tradear o vendérsela a los otros"
+    tu "Sí, puede ser buena opción"
+    tu "Entonces, ¿cómo te la doy?"
+    p "Muy facil, ingresa ese comando"
+    p "$give @pabel [waifu_name]"
+
+    $ command = ''
+    while command != "$give @pabel {}".format(waifu_name):
+      if command != '':
+        "No... así no era"
+      $ command = renpy.input("$give @pabel [waifu_name]")
+
+    p "Gracias, supongo..."
 
 
 label ccChoser:
