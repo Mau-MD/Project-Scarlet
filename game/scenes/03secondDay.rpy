@@ -513,9 +513,10 @@ label waifuNaki:
   tu "Sí me gusta mucho LoL..."
   tu "Bueno, adios"
 
+  jump ccChoser
 
 
-#Turytytyty
+
 label waifuPabel:
   tu "Hola otra vez, Pabel"
   p "Hola, Mau, ¿cómo has estado? ¿Te están cayedo bien los demás?"
@@ -582,6 +583,188 @@ label waifuPabel:
       $ command = renpy.input("$give @pabel [waifu_name]")
 
     p "Gracias, supongo..."
+    p "De algo me va a servir"
+    "Veo su cara. Está intentando hacerme sentir bien"
+    "No era nada que él quería"
+    "Rayos... A la próxima tengo que checar bien la wishlist de cada quién. No quiero volver a cometer el mismo error"
 
+  tu "Bueno pues, ya me voy"
+  p "Nono, espera, estuve sacando Waifus e hice claim de una que a lo mejor te puede gustar..."
+  p "¿La quieres?"
+  tu "¿Eh?"
+  tu "¿Yo?"
+  p "Sisi, es Alistar"
+  tu "Ohhh, creo que supiste que me gusta LoL..."
+  p "Eh, jeje. Pues todos lo saben"
+  tu "Oh... Ya veo..."
+  p "Igual, recíbela. Es un regalo de mí para tí por haberme dado tu Waifu"
+  tu "En ese caso muchas gracias"
+  p "{i}$give @[povname] Alistar{/i}"
+  tu "Gracias jeje"
+  tu "Voy a regresar con los demás"
+
+  jump ccChoser
+
+label waifuMau:
+  tu "Hola Mau, ¿cómo vas con PogU?"
+  "TypeError: unsupported operand type(s) for /: 'str' and 'int'"
+  "Uncaughted Exception: unsupported datatype"
+  tu "Ya veo..."
+  m "NUNCA FUNCIONA"
+  m "N O  S I R V E"
+  m "Oh, hola [pov_name]"
+  m "Crei que ya no ibas a volver jeje"
+  tu "Veo que todavía tienes problemas"
+  m "Si... Como te dije antes, siempre pasa esto"
+  m "Parece que me voy a quedar aquí toda la noche hasta que PogU funcione"
+  tu "¿Eh? No cierran la escuela"
+  m "Oh cierto, se me había olvidado"
+  "¿Cómo puedes olvidar algo así?"
+  m "A veces"
+  m "¿No te ha pasado que...?" # Acto II
+  m "No..."
+  m "Olvidalo..."
+  tu "¿Qué pasó?"
+  m "Bueno, ¿qué querías decirme?"
+  tu "Oh... Claro"
+  tu "Te quería regalar una Waifu"
+  m "Oh, ya veo"
+  m "Genial, gracias"
+  m "¿Quién es?"
+  tu "Es [waifu_name]"
+
+  if waifu[1] == 4:
+    $ friendMau += 2
+    m "Nooooooooo"
+    m "¿¡ En serio te salió ?!"
+    m "La llevo buscando un buen de rato"
+    m "Tengo la peor suerte de todas, y las buenas que salen siempre me las snipean"
+    m "Ni pepes"
+    m "Pero ala"
+    m "¿Estás seguro que me la quieres regalar?"
+    tu "Síiii, ¿por qué no?"
+    tu "Además, creo que te ves muy contento de tenerla"
+    m "Síiii, ala"
+    m "Para regalarla tienes que usar el comando"
+    m "$give @mau [waifu_name]"
+    tu "Ya veo..."
+
+    $ attempts = 0
+    $ command = ''
+    while command != "$give @mau {}".format(waifu_name):
+        if command != '':
+          $ attempts += 1
+          if "pabel" or "pavo" in command:
+            if attempts >= 3:
+              m "¿Es en serio?"
+              m "Pabel literal tiene la mejor suerte de todas"
+              m "La otra vez él no tenía claim y no nos dijo que la que salió era top-tier"
+              m "Es un desgraciado"
+              tu "P...Perdon"
+            else:
+              m "Para qué el pavolol. Ni sabe quién es ella" 
+              tu "P...Perdon"
+          else:
+            if attempts >= 3:
+              "{b}¿Eres idiota?{/b}"
+            else:
+              "No... así no era"
+        $ command = renpy.input("$give @mau [waifu_name]")
+
+    m "Alaa, ¡super genial!"
+    m "Muchas gracias bro"
+    "Genial, está funcionando"
+    "Quién iba a pensar que una imágen 2D lo emocionaría mucho"
+    "Bueno, así se raras son las personas, ¿qué me podía esperar?"
+    "Igual, creo que sí estoy cumpliendo mi objetivo"
+    "Saldré victorioso"
+    tu "Bueno, creo que ya me voy"
+
+  else:
+    $ friendMau += 1
+    m "Quién mugres es ella"
+    tu "No pues, yo tampoco sé..."
+    m "De seguro es de los ánimes raritos que ve el Tomás. Donde literal se trata de verle las chichis a las morras"
+    tu "¿Eh?"
+    m "Lo que escuchaste"
+    m "¿Verdad que está raro?"
+    tu "¿Sí...?"
+    m "Yo la verdad no sé para qué querría eso"
+    m "No quiero tener una porquería así en mi Harem"
+    m "Bueno..."
+    m "Pensándolo bien..."
+    if waifu[1] == 1:
+      m "La podría negociar con Pabel"
+    elif waifu[1] == 2:
+      m "La podría negociar con Naki"
+    elif waifu[1] == 3:
+      m "La podría negociar con Tomás"
+    m "Sí, dámela"
+    m "No pierdo nada"
+    m "Supongo"
+    "¿S...Se enojó?"
+    "No sabía que se podían poner así solo por una imagen"
+    "¿Qué se le puede hacer?"
+    "Debería haber checado la wishlist primero"
+    "Si sigo así, jamás podré cumplir mi objetivo"
+    m "..."
+    m "¿Qué esperas?"
+    tu "Sisi, perdón"
+    m "Usa el comando"
+    m "$give @mau [waifu_name]"
+    tu "Okok"
+
+    $ attempts = 0
+    $ command = ''
+    while command != "$give @mau {}".format(waifu_name):
+        if command != '':
+          $ attempts += 1
+          if "pabel" or "pavo" in command:
+            if attempts >= 3:
+              m "¿Es en serio?"
+              m "Pabel literal tiene la mejor suerte de todas"
+              m "La otra vez él no tenía claim y no nos dijo que la que salió era top-tier"
+              m "Es un desgraciado"
+              tu "P...Perdon"
+            else:
+              m "Para qué el pavolol. Ni sabe quién es ella" 
+              tu "P...Perdon"
+          else:
+            if attempts >= 3:
+              "{b}¿Eres idiota?{/b}"
+            else:
+              "No... así no era"
+        $ command = renpy.input("$give @mau [waifu_name]")
+
+      m "Gracias, supongo"
+      m "Creo que sí le podré sacar buen provecho"
+      m "Nombre, ya valieron chicos"
+      m "Me voy a hacer millonario"
+      m "Bueno..."
+      m "Voy a conseguir como 500 kakeras"
+      m "Algo es algo"
+      tu "Emmm, bueno, ya me voy"
+
+    m "Nono, espera"
+    m "Estuve haciendo rolls y conseguí algo que probablemente te podría gustar..."
+    m "Es un personaje de LoL"
+    tu "Emmm... ¿Cómo supiste que me gustaba LoL?"
+    m "Bueno, todos en el club saben de eso"
+    tu "Ya veo..."
+    "Rayos, parece que me conocen mejor ellos a mí que yo a ellos"
+    "Tengo que ponerme las pilas"
+    m "Entonces, pues... Te la voy a dar"
+    m "{i}$give @[povname] Anivia{/i}"
+    m "De mi parte"
+    tu "Ummm, gracias"
+    m "Así puedes empezar a hacer tu harem"
+    tu "Sí..."
+    tu "Gracias. Regresaré con los otros"
+
+    jump ccChoser
 
 label ccChoser:
+
+
+
+#Turytytyty
