@@ -1,0 +1,15 @@
+"filename", "language", "Ren'Py", "JSON", "comment", "blank", "total"
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/gui.rpy", "Ren'Py", 168, 0, 170, 137, 475
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/options.rpy", "Ren'Py", 29, 0, 103, 77, 209
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/saves/navigation.json", "JSON", 0, 1, 0, 0, 1
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/scenes/01introduction.rpy", "Ren'Py", 105, 0, 3, 14, 122
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/scenes/02firstDay.rpy", "Ren'Py", 162, 0, 4, 15, 181
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/scenes/03secondDay.rpy", "Ren'Py", 687, 0, 6, 79, 772
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/scenes/97cc.rpy", "Ren'Py", 335, 0, 9, 43, 387
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/scenes/98game.rpy", "Ren'Py", 47, 0, 4, 17, 68
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/scenes/99finales.rpy", "Ren'Py", 43, 0, 3, 8, 54
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/screens.rpy", "Ren'Py", 881, 0, 167, 469, 1517
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/screens/wishList.rpy", "Ren'Py", 43, 0, 0, 3, 46
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/script.rpy", "Ren'Py", 7, 0, 2, 5, 14
+"/Users/maudieguez/Documents/VN/Proyecto Escarlata/game/tl/None/common.rpym", "Ren'Py", 611, 0, 305, 308, 1224
+"Total", "-", 3118, 1, 776, 1175, 5070

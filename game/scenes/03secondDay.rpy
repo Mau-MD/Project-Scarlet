@@ -18,8 +18,10 @@ default t_visited = False
 default m_visited = False
 default n_visited = False
 default p_visited = False
+default day_two_completed = False
 
 label secondDay:
+  day_two_completed = True
   "Quien iba a pensar que entraría a un club así"
   "Incluse hasta tiré waifus"
   "Y..."
@@ -612,7 +614,7 @@ label waifuMau:
   tu "Ya veo..."
   m "NUNCA FUNCIONA"
   m "N O  S I R V E"
-  m "Oh, hola [pov_name]"
+  m "Oh, hola [povname]"
   m "Crei que ya no ibas a volver jeje"
   tu "Veo que todavía tienes problemas"
   m "Si... Como te dije antes, siempre pasa esto"
@@ -763,8 +765,7 @@ label waifuMau:
 
     jump ccChoser
 
-label ccChoser:
-
+  
 
 
 #Turytytyty

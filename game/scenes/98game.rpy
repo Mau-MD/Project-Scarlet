@@ -60,4 +60,8 @@ label game1:
     nn "Ya no puedo clamer más por hoy. Verémos qué me sale mañana"
 
     $ menu = adv_menu
-    jump secondDay
+
+    if day_two_completed:
+        jump thirdDay
+    else:
+        jump secondDay
