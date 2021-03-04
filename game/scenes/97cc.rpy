@@ -32,42 +32,42 @@ default level3TomasVisited = False
 label ccChoser:
   # Level 3 CC
   if friendMau == 6 and not level3MauVisited:
-    level3MauVisited = True
+    $ level3MauVisited = True
     pass
   elif friendTomas == 6 and not level3TomasVisited:
-    level3TomasVisited = True
+    $ level3TomasVisited = True
     pass
   elif friendPabel == 6 and not level3PabelVisited:
-    level3PabelVisited = True
+    $ level3PabelVisited = True
     pass
   elif friendNaki == 6 and not level3NakiVisited:
-    level3NakiVisited = True
+    $ level3NakiVisited = True
     pass
   # Level 2 CC
   elif friendMau == 4 and not level2MauVisited:
-    level2MauVisited = True
+    $ level2MauVisited = True
     pass
   elif friendTomas == 4 and not level2TomasVisited:
-    level2TomasVisited = True
+    $ level2TomasVisited = True
     pass
   elif friendPabel == 4 and not level2PabelVisited:
-    level2PabelVisited = True
+    $ level2PabelVisited = True
     pass
   elif friendNaki == 4 and not level2NakiVisited:
-    level2NakiVisited = True
+    $ level2NakiVisited = True
     pass
   # Level 1 CC
   elif friendMau == 2 and not level1MauVisited:
-    level1MauVisited = True
+    $ level1MauVisited = True
     pass
   elif friendTomas == 2 and not level1TomasVisited:
-    level1TomasVisited = True
+    $ level1TomasVisited = True
     jump level1Tomas
   elif friendPabel == 2 and not level1PabelVisited:
-    level1PabelVisited = True
+    $ level1PabelVisited = True
     jump level1Pabel
   elif friendNaki == 2 and not level1NakiVisited:
-    level1NakiVisited = True
+    $ level1NakiVisited = True
     jump level1Naki
   # No CC
   else:
@@ -384,4 +384,3 @@ label level1Pabel:
   label level1Mau:
     m "Hey, qué tal [povname]"
     tu "Hola"
-    

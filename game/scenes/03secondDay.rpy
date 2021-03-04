@@ -21,7 +21,7 @@ default p_visited = False
 default day_two_completed = False
 
 label secondDay:
-  day_two_completed = True
+  $ day_two_completed = True
   "Quien iba a pensar que entraría a un club así"
   "Incluse hasta tiré waifus"
   "Y..."
@@ -62,18 +62,23 @@ label selection:
     "Mau":
       if m_visited:
         "Ya lo saludé..."
+        jump selection
+
       else:
         $ m_visited = True
         jump act1Mau
     "Naki":
       if n_visited:
         "Ya lo saludé"
+        jump selection
+
       else:
         $ n_visited = True
         jump act1Naki
     "Pabel":
       if p_visited:
         "Ya lo saludé"
+        jump selection
       else:
         $ p_visited = True
         jump act1Pabel
@@ -551,11 +556,11 @@ label waifuPabel:
     $ command = ''
     while command != "$give @pavo {}".format(waifu_name):
       if command != '':
-          if attempts >= 3:
-            "{b}¿Eres idiota?{/b}"
-          else:
-            "No... así no era"
-        $ command = renpy.input("$give @pavo [waifu_name]")  
+        if attempts >= 3:
+          "{b}¿Eres idiota?{/b}"
+        else:
+          "No... así no era"
+      $ command = renpy.input("$give @pavo [waifu_name]")  
 
     p "Siuuuu, muchas gracias [povname]"
     tu "Jaja, no hay de qué"
@@ -719,24 +724,24 @@ label waifuMau:
     $ attempts = 0
     $ command = ''
     while command != "$give @mau {}".format(waifu_name):
-        if command != '':
-          $ attempts += 1
-          if "pabel" or "pavo" in command:
-            if attempts >= 3:
-              m "¿Es en serio?"
-              m "Pabel literal tiene la mejor suerte de todas"
-              m "La otra vez él no tenía claim y no nos dijo que la que salió era top-tier"
-              m "Es un desgraciado"
-              tu "P...Perdon"
-            else:
-              m "Para qué el pavolol. Ni sabe quién es ella" 
-              tu "P...Perdon"
+      if command != '':
+        $ attempts += 1
+        if "pabel" or "pavo" in command:
+          if attempts >= 3:
+            m "¿Es en serio?"
+            m "Pabel literal tiene la mejor suerte de todas"
+            m "La otra vez él no tenía claim y no nos dijo que la que salió era top-tier"
+            m "Es un desgraciado"
+            tu "P...Perdon"
           else:
-            if attempts >= 3:
-              "{b}¿Eres idiota?{/b}"
-            else:
-              "No... así no era"
-        $ command = renpy.input("$give @mau [waifu_name]")
+            m "Para qué el pavolol. Ni sabe quién es ella" 
+            tu "P...Perdon"
+        else:
+          if attempts >= 3:
+            "{b}¿Eres idiota?{/b}"
+          else:
+            "No... así no era"
+      $ command = renpy.input("$give @mau [waifu_name]")
 
       m "Gracias, supongo"
       m "Creo que sí le podré sacar buen provecho"
@@ -747,23 +752,23 @@ label waifuMau:
       m "Algo es algo"
       tu "Emmm, bueno, ya me voy"
 
-    m "Nono, espera"
-    m "Estuve haciendo rolls y conseguí algo que probablemente te podría gustar..."
-    m "Es un personaje de LoL"
-    tu "Emmm... ¿Cómo supiste que me gustaba LoL?"
-    m "Bueno, todos en el club saben de eso"
-    tu "Ya veo..."
-    "Rayos, parece que me conocen mejor ellos a mí que yo a ellos"
-    "Tengo que ponerme las pilas"
-    m "Entonces, pues... Te la voy a dar"
-    m "{i}$give @[povname] Anivia{/i}"
-    m "De mi parte"
-    tu "Ummm, gracias"
-    m "Así puedes empezar a hacer tu harem"
-    tu "Sí..."
-    tu "Gracias. Regresaré con los otros"
+  m "Nono, espera"
+  m "Estuve haciendo rolls y conseguí algo que probablemente te podría gustar..."
+  m "Es un personaje de LoL"
+  tu "Emmm... ¿Cómo supiste que me gustaba LoL?"
+  m "Bueno, todos en el club saben de eso"
+  tu "Ya veo..."
+  "Rayos, parece que me conocen mejor ellos a mí que yo a ellos"
+  "Tengo que ponerme las pilas"
+  m "Entonces, pues... Te la voy a dar"
+  m "{i}$give @[povname] Anivia{/i}"
+  m "De mi parte"
+  tu "Ummm, gracias"
+  m "Así puedes empezar a hacer tu harem"
+  tu "Sí..."
+  tu "Gracias. Regresaré con los otros"
 
-    jump ccChoser
+  jump ccChoser
 
   
 

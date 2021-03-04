@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes/03secondDay.rpy", line 413: expected 'label_name_declare' not found.
-    label 
-         ^
+File "game/scenes/03secondDay.rpy", line 771: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    jump ccChoser
+    ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Mon Mar  1 12:06:58 2021
+Wed Mar  3 12:37:30 2021
